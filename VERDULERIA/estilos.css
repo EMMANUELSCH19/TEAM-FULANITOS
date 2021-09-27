@@ -242,3 +242,39 @@ ul {
     color: #369681;
     font-weight: bold;
 }
+/*-----ESTILOS BUTTON + / -  -----*/
+
+#menos1, #menos2, #menos3, #menos4, #menos5{
+    height: 30px;
+    width: 30px;
+    background-color: grey;
+    color:whitesmoke;
+    border:solid 1px black;
+    text-align: center;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+
+#mas1,#mas2,#mas3,#mas4,#mas5{
+    height: 30px;
+    width: 30px;
+    color: white;
+    background-color: #394CFF;
+    border: solid 1px black;
+    text-align: center;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+#menos1:hover, #menos2:hover, #menos3:hover, #menos4:hover, #menos5:hover{
+    background:red;
+    font-weight: bold;
+}
+
+#mas1:hover,#mas2:hover,#mas3:hover,#mas4:hover,#mas5:hover{
+    background:rgb(0, 254, 0);
+    font-weight: bold;
+}

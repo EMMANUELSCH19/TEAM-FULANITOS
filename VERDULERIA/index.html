@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!----"ESTA LINEA LLAMA A CHARTT.JS"--> 
+    <script src = "https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.js"></script>
     <title>Verduleria la Bellota</title>
     <link rel="shortcut icon" href="/iconos/favicon.ico">
     <link rel="stylesheet" href="estilos.css">
@@ -11,7 +13,6 @@
     
 </head>
 <body>
-    <body>
     <header id="main-header">
         <h1>Verduleria la Bellota 🍎🍌</h1>
         <nav> 
@@ -20,6 +21,7 @@
                 <li><a href="#tienda">Tienda</a></li>
                 <li><a href="#carrito">Carrito</a></li>
                 <li><a href="#contacto">Contacto</a></li>
+                <li><a href="#grafica">Grafica</a></li>
             </ul>
         </nav>
     </header>
@@ -35,7 +37,7 @@
 
         <table id="productos">
             <div class="contenedor-titulo">
-                <p id="tienda" class="titulo">Tienda</p>
+                <p id="tienda" class="titulo">Tienda🏪</p>
             </div>
 
                 <tr>
@@ -85,12 +87,14 @@
     <br>
 
     <div id="carrito" class="contenedor-titulo">
-        <p class="titulo">Carrito</p>
+        <p class="titulo">Carrito 🛒</p>
     </div>
     
     <table id = "tablaProductos">
         <tr>
             <th>Nombre</th>
+            <th>Cantidad</th>
+            <th>Acciones</th>
             <th>Precio</th>
         </tr>
     </table>
@@ -103,11 +107,49 @@
         </tr> 
     </table>
 
+    <div id="grafica" class="contenedor-titulo">
+        <p class="titulo">Ventas Obtenidas Mensualmente📊</p>
+    </div>
+
+    <div class="grafica">
+        <canvas id ="myChart"></canvas>
+    </div>
+        <!----"INSERTAR GRAFICA ES HERMOSO 5 ok"-->
+        <script>
+        var ctx = document.getElementById("myChart").getContext("2d");
+        var myChart = new Chart(ctx,{
+            type:"bar",
+            data:{
+                labels:['Manzana 🍎','Sandia 🍉','Mango 🥭','Platano 🍌','Melon 🍈'],
+                datasets:[{
+                    label:"Ventas al Mes de la Veduleria La Bellota",
+                    data:[10,9,15,7,20],
+                    backgroundColor:[
+                        'rgb(255, 51, 0)',
+                        'rgb(102, 255, 51)',
+                        'rgb(255, 153, 0)',
+                        'rgb(255, 255, 0)',
+                        'rgb(255, 153, 51)'
+                    ]
+                }]
+            }
+        });
+        </script>       
+        
+        <!----"INSERTAR GRAFICA"-->  
+
+    <script type ="text/Javacript" src = "http://wwww.google.com"></script>
+    <script type ="visualization">
+
+        google.load("visualization",'1.0',{'packges':[corechart]});
+        googl
+
+    </script>
 
     <br>
     <div id="contacto" class="contenido">
         <br>
-        <h3 class="titulo-contacto">Contactanos <span>Ahora</span></h3>
+        <h3 class="titulo-contacto">Contactanos <span>Ahora📞</span></h3>
         
             <div class="contacto-form">
                 <form action="">
