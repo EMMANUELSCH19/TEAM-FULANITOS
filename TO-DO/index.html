@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/b80c0a651a.js" crossorigin="anonymous"></script>
     <title>Ordenando Ando</title>
+    <link rel="shortcut icon" href="/img/favicon.ico">
     <link rel="stylesheet" href="estilos.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -19,84 +20,55 @@
                 <input type="text" class="input" id="input" placeholder="Escribe aqui">
                 <button class="btn_todo" id="btn_todo">Añadir</button>
             </div>
-            <!--------->
+
             <div class="container_todo">
                 <div class="container_list">
                     <div class="container_list-1">
                         <input type="checkbox" class="casilla">
-                        <p class="actividad">Tarea</p>
+                        <!----tal vez cambiano la id de este se pueda arreglar, pero no lo intente
+                        
+                        pd: leer primero los comentarios en el .js-->
+                        <p class="actividad" id="actividad1">Tarea</p>
                     </div> 
                     <div class="container_list-btn">
-                        <button class="btn-proceso" id="btn_proceso">En Proceso</button>
+                        <button class="btn_proceso" id="btn_proceso">En Proceso</button>
                         <button class="btn-eliminar"><i class="fas fa-trash-alt"></i></button>
+                    </div> 
+                </div> 
+
+            </div>
+        </div>
+        
+        <div class="container-2">
+            <h1 class="titulo">TAREAS EN PROCESO ⏳</h1>
+            <div class="container_proceso">
+                <div class="container_list_proceso" id="container_list">
+                    <div class="container_list-1_proceso">
+                        <input type="checkbox" class="casilla_proceso">
+                        <p class="actividad_proceso">Tarea</p>
+                    </div> <!--XD--> <!--NO LO DIGAS NI DE BROMA JAJA-->
+                    <div class="container_list-btn_proceso">
+                        <button class="btn-eliminar_proceso"><i class="fas fa-trash-alt"></i></button>
                     </div>   
                 </div> 
             </div>
         </div>
-<!---------------------------------------------------------------------->    
-        <table id = "Tarea En Proceso" class="container-2">
-            <tr class="titulo">
-                <th >Tareas En Proceso ⏳</th>
-                <th>Acción</th>
-            </tr>
-            <tr class="Proceso">
-                <td>1</td>
-                <td><button id="finalizada" onclick="total()">Finalizada</button></th></td>
-            </tr>
-        </table>
 
-        <table id="Tarea_Finalizada" class="container-3">
-            <tr class="titulo">
-                <th>Tareas Finalizadas ✅</th>
-                <th>Acción</th>
-            </tr>
-            <tr class="Finalizada">
-                <td>1</td>
-                <td><button id="eliminar" onclick="total()">Eliminar</button></th></td>
-            </tr>
-        </table>
-
-    </div>
-    <!------<div class="container2">
-            <h1 class="titulo">TAREAS EN PROCESO ⏳</h1>
-            <div class="container_input">
-                <!------<input type="text" class="input" id="input1" placeholder="Escribe aqui">
-               <button class="btn_todo" id="btn_todo1">Añadir</button> 
-            </div>--> 
-            <!-----
-            <div class="container_todo">
-                <div class="container_list">
-                    <div class="container_list-1">
-                        <input type="checkbox" class="casilla">
-                        <p class="actividad">Tarea</p>
-                    </div> 
-                    <div class="container_list-btn">
-                        <button class="btn-eliminar"><i class="fas fa-trash-alt"></i></button>
-                    </div>   
-                </div>
-            </div>
-        </div>--->
-<!---------------------------------------------------------------------->
-       <!--- <div class="container3">
+        <div class="container-3">
             <h1 class="titulo">TAREAS CONCLUIDAS ✅</h1>
-            <div class="container_input_concluida">
-                <!------<input type="text" class="input" id="input2" placeholder="Escribe aqui">
-                <button class="btn_todo" id="btn_todo2">Añadir</button>
-            </div>--> 
-            <!------
-            <div class="container_todo">
-                <div class="container_list">
-                    <div class="container_list-1">
-                        <input type="checkbox" class="casilla">
-                        <p class="actividad">Tarea</p>
+            <div class="container_concluidas">
+                <div class="container_list_proceso">
+                    <div class="container_list-1_proceso">
+                        <input type="checkbox" class="casilla_proceso">
+                        <p class="actividad_proceso">Tarea</p>
                     </div> 
-                    <div class="container_list-btn">
-                        <button class="btn-eliminar"><i class="fas fa-trash-alt"></i></button>
+                    <div class="container_list-btn_proceso">
+                        <button class="btn-eliminar_proceso"><i class="fas fa-trash-alt"></i></button>
                     </div>   
-                </div>
+                </div> 
             </div>
         </div>
-    </div>---> 
+    </div>
 
     <script src="main.js"></script>
 </body>
