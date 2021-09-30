@@ -19,7 +19,6 @@ var condicion = true;
 //copiando a las demas funciones 
 function  agregarProducto1(){
     event.preventDefault();
-    var mas = document.write
     var producto = document.getElementById("producto1").innerHTML;
     var precio = document.getElementById("precio1").innerHTML;
     let ReferenciaTablaAgregar = document.getElementById("tablaProductos");
@@ -34,7 +33,7 @@ function  agregarProducto1(){
         nuevaRefCelda1.id = "c_1";
         //colocando la celda de los botones 
         let nuevaRefCeldaBoton = nuevaFila.insertCell(2)
-        nuevaRefCeldaBoton.innerHTML = `<button id = "menos1" class = "menos" onclick = "restar1()">-</button> <button id = "mas1" class = "mas" onclick = "sumar1()">+</button>`;
+        nuevaRefCeldaBoton.innerHTML = `<button id = "menos1" class = "menos" onclick = "restar1(this)">-</button> <button id = "mas1" class = "mas" onclick = "sumar1()">+</button>`;
         nuevaRefCelda1.textContent = cantidad_1;//voy a hacer pruebas
         let nuevaRefCelda2 = nuevaFila.insertCell(3);
         nuevaRefCelda2.id = "p_1";
@@ -68,7 +67,7 @@ function  agregarProducto2(){
         let nuevaRefCelda1 = nuevaFila.insertCell(1);
         nuevaRefCelda1.id = "c_2";
         let nuevaRefCeldaBoton = nuevaFila.insertCell(2)
-        nuevaRefCeldaBoton.innerHTML = `<button id = "menos2" class = "menos" onclick = "restar2()">-</button> <button id = "mas2" class = "mas" onclick ="sumar2()">+</button>`;
+        nuevaRefCeldaBoton.innerHTML = `<button id = "menos2" class = "menos" onclick = "restar2(this)">-</button> <button id = "mas2" class = "mas" onclick ="sumar2()">+</button>`;
         nuevaRefCelda1.textContent = cantidad_2;//voy a hacer pruebas
         let nuevaRefCelda2 = nuevaFila.insertCell(3);
         nuevaRefCelda2.id = "p_2";
@@ -101,7 +100,7 @@ function  agregarProducto3(){
         let nuevaRefCelda1 = nuevaFila.insertCell(1);
         nuevaRefCelda1.id = "c_3";
         let nuevaRefCeldaBoton = nuevaFila.insertCell(2)
-        nuevaRefCeldaBoton.innerHTML = `<button id = "menos3" class = "menos" onclick = "restar3()">-</button> <button id = "mas3" class = "mas" onclick = "sumar3()">+</button>`;
+        nuevaRefCeldaBoton.innerHTML = `<button id = "menos3" class = "menos" onclick = "restar3(this)">-</button> <button id = "mas3" class = "mas" onclick = "sumar3()">+</button>`;
         nuevaRefCelda1.textContent = cantidad_3;//voy a hacer pruebas
         let nuevaRefCelda2 = nuevaFila.insertCell(3);
         nuevaRefCelda2.id = "p_3";
@@ -135,7 +134,7 @@ function  agregarProducto4(){
         let nuevaRefCelda1 = nuevaFila.insertCell(1);
         nuevaRefCelda1.id = "c_4";
         let nuevaRefCeldaBoton = nuevaFila.insertCell(2)
-        nuevaRefCeldaBoton.innerHTML = `<button id = "menos4" class = "menos" onclick = "restar4()">-</button> <button id = "mas4" class = "mas" onclick = "sumar4()">+</button>`;
+        nuevaRefCeldaBoton.innerHTML = `<button id = "menos4" class = "menos" onclick = "restar4(this)">-</button> <button id = "mas4" class = "mas" onclick = "sumar4()">+</button>`;
         nuevaRefCelda1.textContent = cantidad_4;//voy a hacer pruebas
         let nuevaRefCelda2 = nuevaFila.insertCell(3);
         nuevaRefCelda2.id = "p_4";
@@ -168,7 +167,7 @@ function  agregarProducto5(){
         let nuevaRefCelda1 = nuevaFila.insertCell(1);
         nuevaRefCelda1.id = "c_5";
         let nuevaRefCeldaBoton = nuevaFila.insertCell(2)
-        nuevaRefCeldaBoton.innerHTML = `<button id = "menos5" class = "menos" onclick = "restar5()">-</button> <button id = "mas5" class = "mas" onclick = "sumar5()">+</button>`;
+        nuevaRefCeldaBoton.innerHTML = `<button id = "menos5" class = "menos" onclick = "restar5(this)">-</button> <button id = "mas5" class = "mas" onclick = "sumar5()">+</button>`;
         nuevaRefCelda1.textContent = cantidad_5;//voy a hacer pruebas
         let nuevaRefCelda2 = nuevaFila.insertCell(3);
         nuevaRefCelda2.id = "p_5";
@@ -191,10 +190,29 @@ function total() {
     var mostrar = document.getElementById("mostrarTotal");
     mostrar.textContent ="Su compra total es de $"+totales;
     totales = 0.0;
+    var ctx = document.getElementById("myChart").getContext("2d");
+    var myChart = new Chart(ctx,{
+        type:"bar",
+        data:{
+            labels:['Manzana 🍎','Sandia 🍉','Mango 🥭','Platano 🍌','Melon 🍈'],
+            datasets:[{
+                label:"Ventas al Mes de la Veduleria La Bellota",
+                data:[subtotal_1,subtotal_2,subtotal_3,subtotal_4,subtotal_5],
+                backgroundColor:[
+                    'rgb(255, 51, 0)',
+                    'rgb(102, 255, 51)',
+                    'rgb(255, 153, 0)',
+                    'rgb(255, 255, 0)',
+                    'rgb(255, 153, 51)'
+                ]
+            }]
+        }
+    });
+
   }
 
   //suma y resta del 1
-  function restar1(){
+  function restar1(r){
     var precios = document.getElementById("precio1").innerHTML;
     var precio = parseFloat(precios.slice(1));
     cantidad_1--;
@@ -203,6 +221,10 @@ function total() {
     document.getElementById("p_1").innerHTML = "$"+subtotal_1;
     console.log(cantidad_1);
     console.log(subtotal_1);
+    if (cantidad_1 == 0) {//esto permite eliminar la fila cuando la cantidad es 0
+        var i=r.parentNode.parentNode.rowIndex
+        document.getElementById("tablaProductos").deleteRow(i);
+    }
 
 }
 function sumar1(){
@@ -217,7 +239,7 @@ function sumar1(){
 }
 
 //suma y resta del 2 
-function restar2(){
+function restar2(r){
     var precios = document.getElementById("precio2").innerHTML;
     var precio = parseFloat(precios.slice(1));
     cantidad_2--;
@@ -226,6 +248,10 @@ function restar2(){
     document.getElementById("p_2").innerHTML = "$"+subtotal_2;
     console.log(cantidad_2);
     console.log(subtotal_2);
+    if (cantidad_2 == 0) {//esto permite eliminar la fila cuando la cantidad es 0
+        var i=r.parentNode.parentNode.rowIndex
+        document.getElementById("tablaProductos").deleteRow(i);
+    }
 
 }
 function sumar2(){
@@ -240,7 +266,7 @@ function sumar2(){
 }
 
 //suma y resta del 3
-function restar3(){
+function restar3(r){
     var precios = document.getElementById("precio3").innerHTML;
     var precio = parseFloat(precios.slice(1));
     cantidad_3--;
@@ -249,6 +275,10 @@ function restar3(){
     document.getElementById("p_3").innerHTML = "$"+subtotal_3;
     console.log(cantidad_3);
     console.log(subtotal_3);
+    if (cantidad_3 == 0) {//esto permite eliminar la fila cuando la cantidad es 0
+        var i=r.parentNode.parentNode.rowIndex
+        document.getElementById("tablaProductos").deleteRow(i);
+    }
 
 }
 function sumar3(){
@@ -263,7 +293,7 @@ function sumar3(){
 }
 
 //suma y resta del 4
-function restar4(){
+function restar4(r){
     var precios = document.getElementById("precio4").innerHTML;
     var precio = parseFloat(precios.slice(1));
     cantidad_4--;
@@ -272,6 +302,10 @@ function restar4(){
     document.getElementById("p_4").innerHTML = "$"+subtotal_4;
     console.log(cantidad_4);
     console.log(subtotal_4);
+    if (cantidad_4 == 0) {//esto permite eliminar la fila cuando la cantidad es 0
+        var i=r.parentNode.parentNode.rowIndex
+        document.getElementById("tablaProductos").deleteRow(i);
+    }
 
 }
 function sumar4(){
@@ -286,7 +320,7 @@ function sumar4(){
 }
 
 //suma y resta del 5
-function restar5(){
+function restar5(r){
     var precios = document.getElementById("precio5").innerHTML;
     var precio = parseFloat(precios.slice(1));
     cantidad_5--;
@@ -295,6 +329,10 @@ function restar5(){
     document.getElementById("p_5").innerHTML = "$"+subtotal_5;
     console.log(cantidad_5);
     console.log(subtotal_5);
+    if (cantidad_5 == 0) {//esto permite eliminar la fila cuando la cantidad es 0
+        var i=r.parentNode.parentNode.rowIndex
+        document.getElementById("tablaProductos").deleteRow(i);
+    }
 
 }
 function sumar5(){

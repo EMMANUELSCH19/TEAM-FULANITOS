@@ -10,9 +10,10 @@
     <link rel="shortcut icon" href="/iconos/favicon.ico">
     <link rel="stylesheet" href="estilos.css">
     <script src="main.js"></script>
-    
 </head>
+
 <body>
+
     <header id="main-header">
         <h1>Verduleria la Bellota 🍎🍌</h1>
         <nav> 
@@ -21,7 +22,7 @@
                 <li><a href="#tienda">Tienda</a></li>
                 <li><a href="#carrito">Carrito</a></li>
                 <li><a href="#contacto">Contacto</a></li>
-                <li><a href="#grafica">Grafica</a></li>
+                <li><a href="#grafica">Gráfica</a></li>
             </ul>
         </nav>
     </header>
@@ -35,54 +36,53 @@
         </div>
     </div>
 
-        <table id="productos">
-            <div class="contenedor-titulo">
-                <p id="tienda" class="titulo">Tienda🏪</p>
-            </div>
-
-                <tr>
-                <th>#</th>
-                <th>Nombre</th>
-                <th>Precio</th>
-                <th>Cantidad</th>
-                <th>Agregar</tha> 
-            </tr>
-            <tr class="Primera">
-                <td>1</td>
-                <td id = "producto1">Manzana 🍎</td>
-                <td id = "precio1">$59.00</td>
-                <td id = "peso1">1Kg</td>
-                <td class="button"><input type="button" value="Añadir" id="añadir" onclick="agregarProducto1()"></td>
-            </tr>
-            <tr class="Segunda">
-                <td>2</td>
-                <td id = "producto2">Sandia 🍉</td>
-                <td id = "precio2">$13.00</td>
-                <td>1kg</td>
-                <td class="button"><input type="button" value="Añadir" id="añadir" onclick="agregarProducto2()"></td>
-            </tr>
-                <tr class="Tercera">
-                    <td>3</td>
-                    <td id = "producto3">Platano🍌</td>
-                    <td id = "precio3">$17.00</td>
-                    <td>1Kg</td>
-                    <td class="button"><input type="button" value="Añadir" id="añadir" onclick="agregarProducto3()"></td>
-                </tr>
-            <tr class="Cuarta">
-                <td>4</td>
-                <td id = "producto4">Melon🍈</td>
-                <td id = "precio4">$25.00</td>
-                <td>1kg</td>
-                <td class="button"><input type="button" value="Añadir" id="añadir" onclick="agregarProducto4()"></td>
-            </tr>
-            <tr class="Quinta">
-                <td>5</td>
-                <td id = "producto5">Mango🥭</td>
-                <td id = "precio5">$43.00</td>
-                <td>1kg</td>
-                <td class="button"><input type="button" value="Añadir" id="añadir" onclick="agregarProducto5()"></input></td>
-            </tr>   
-        </table>
+    <table id="productos">
+        <div class="contenedor-titulo">
+            <p id="tienda" class="titulo">Tienda 🏪</p>
+        </div>
+        <tr>
+            <th>#</th>
+            <th>Nombre</th>
+            <th>Precio</th>
+            <th>Cantidad</th>
+            <th>Agregar</tha> 
+        </tr>
+        <tr class="Primera">
+            <td>1</td>
+            <td id = "producto1">Manzana 🍎</td>
+            <td id = "precio1">$59.00</td>
+            <td id = "peso1">1Kg</td>
+            <td class="button"><input type="button" value="Añadir" id="añadir" onclick="agregarProducto1()"></td>
+        </tr>
+        <tr class="Segunda">
+            <td>2</td>
+            <td id = "producto2">Sandia 🍉</td>
+            <td id = "precio2">$13.00</td>
+            <td>1kg</td>
+            <td class="button"><input type="button" value="Añadir" id="añadir" onclick="agregarProducto2()"></td>
+        </tr>
+        <tr class="Tercera">
+            <td>3</td>
+            <td id = "producto3">Platano🍌</td>
+            <td id = "precio3">$17.00</td>
+            <td>1Kg</td>
+            <td class="button"><input type="button" value="Añadir" id="añadir" onclick="agregarProducto3()"></td>
+        </tr>
+        <tr class="Cuarta">
+            <td>4</td>
+            <td id = "producto4">Melon🍈</td>
+            <td id = "precio4">$25.00</td>
+            <td>1kg</td>
+            <td class="button"><input type="button" value="Añadir" id="añadir" onclick="agregarProducto4()"></td>
+        </tr>
+        <tr class="Quinta">
+            <td>5</td>
+            <td id = "producto5">Mango🥭</td>
+            <td id = "precio5">$43.00</td>
+            <td>1kg</td>
+            <td class="button"><input type="button" value="Añadir" id="añadir" onclick="agregarProducto5()"></input></td>
+        </tr>   
+    </table>
     
     <br>
 
@@ -98,7 +98,9 @@
             <th>Precio</th>
         </tr>
     </table>
+
     <br>
+    
     <table id = "total">
         <tr>
             <th>TOTAL</th>
@@ -108,92 +110,62 @@
     </table>
 
     <div id="grafica" class="contenedor-titulo">
-        <p class="titulo">Ventas Obtenidas Mensualmente📊</p>
+        <p class="titulo">Ventas por Producto 📊</p>
     </div>
 
     <div class="grafica">
         <canvas id ="myChart"></canvas>
     </div>
         <!----"INSERTAR GRAFICA ES HERMOSO 5 ok"-->
-        <script>
-        var ctx = document.getElementById("myChart").getContext("2d");
-        var myChart = new Chart(ctx,{
-            type:"bar",
-            data:{
-                labels:['Manzana 🍎','Sandia 🍉','Mango 🥭','Platano 🍌','Melon 🍈'],
-                datasets:[{
-                    label:"Ventas al Mes de la Veduleria La Bellota",
-                    data:[10,9,15,7,20],
-                    backgroundColor:[
-                        'rgb(255, 51, 0)',
-                        'rgb(102, 255, 51)',
-                        'rgb(255, 153, 0)',
-                        'rgb(255, 255, 0)',
-                        'rgb(255, 153, 51)'
-                    ]
-                }]
-            }
-        });
-        </script>       
+    
         
-        <!----"INSERTAR GRAFICA"-->  
-
-    <script type ="text/Javacript" src = "http://wwww.google.com"></script>
-    <script type ="visualization">
-
-        google.load("visualization",'1.0',{'packges':[corechart]});
-        googl
-
-    </script>
+    <!----"INSERTAR GRAFICA"-->
 
     <br>
+
     <div id="contacto" class="contenido">
         <br>
         <h3 class="titulo-contacto">Contactanos <span>Ahora📞</span></h3>
-        
-            <div class="contacto-form">
-                <form action="">
-                    <p>
-                        <label>Nombre completo</label>
-                        <input type="text" name="fullname">
-                    </p>
-                    <p>
-                        <label>Correo electronico</label>
-                        <input type="email" name="email">
-                    </p>
-                    <p>
-                        <label>Numero de telefono</label>
-                        <input type="tel" name="phone">
-                    </p>
-                    <p>
-                        <label>Asunto</label>
-                        <input type="text" name="affair">
-                    </p>
-                    <p class="caja">
-                        <label>Mensaje</label> 
-                        <textarea name="message" rows="3"></textarea>
-                    </p>
-                    <p class="caja">
-                        <button>
-                            Enviar
-                        </button>
-                    </p>
-                </form>
-            </div>
-            <div class="contacto-info">
-                <h4>Más Informacion:</h4>
-                <ul>
-                    <li><i></i> Verduleria Bellota</li>
-                    <li><i></i> (+52) 111 222 333</li>
-                    <li><i></i> verduleria.bellota@outlook.com</li>
-                </ul>
-                <p>Derechos reservados a Verduleria Bellota S.A de C.V</p>
-                <p>verduleriabellota.com</p>
-            </div>
-        
-
+        <div class="contacto-form">
+            <form action="">
+                <p>
+                    <label>Nombre completo</label>
+                    <input type="text" name="fullname">
+                </p>
+                <p>
+                    <label>Correo electronico</label>
+                    <input type="email" name="email">
+                </p>
+                <p>
+                    <label>Numero de telefono</label>
+                    <input type="tel" name="phone">
+                </p>
+                <p>
+                    <label>Asunto</label>
+                    <input type="text" name="affair">
+                </p>
+                <p class="caja">
+                    <label>Mensaje</label> 
+                    <textarea name="message" rows="3"></textarea>
+                </p>
+                <p class="caja">
+                    <button>
+                        Enviar
+                    </button>
+                </p>
+            </form>
+        </div>
+        <div class="contacto-info">
+            <h4>Más Informacion:</h4>
+            <ul>
+                <li><i></i> Verduleria Bellota</li>
+                <li><i></i> (+52) 111 222 333</li>
+                <li><i></i> verduleria.bellota@outlook.com</li>
+            </ul>
+            <p>Derechos reservados a Verduleria Bellota S.A de C.V</p>
+            <p>verduleriabellota.com</p>
+        </div>
     </div>
 
 </body>
-
 </html>
