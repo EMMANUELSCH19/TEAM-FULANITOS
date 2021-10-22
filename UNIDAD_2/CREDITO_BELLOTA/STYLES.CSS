@@ -1,0 +1,67 @@
+:root{
+    --background-color: rgb(24, 23, 39);
+    --primary-color: springgreen;
+    --secondary-color: rgb(177, 177, 177);
+    
+    --text-color: white;
+    --tittle-color: var(--background-color);
+}
+
+body{
+background: var(--background-color);
+color: var(--text-color);
+}
+
+body::-webkit-scrollbar{
+    width: 8px;
+}
+
+body::-webkit-scrollbar-thumb{
+    background: var(--primary-color);
+    border-radius: 5px;
+}
+
+h1{
+    color: var(--primary-color);
+    font-weight: bold;
+}
+.tittle{
+    background: rgb(13, 12, 17);
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.dt{
+    margin: 20px auto;
+}
+
+.importe, .plazo, .tasa_interes_anual{
+    padding: 10px;
+    border-bottom: solid 1px var(--secondary-color);
+    display: flex;
+}
+
+.importe input{
+    border: solid 1px;
+    border-radius: 5px;
+}
+
+.scroll-div{
+    overflow: hidden;
+    overflow-x: scroll;
+}
+
+.scroll-div::-webkit-scrollbar{
+    height: 10px;
+}
+
+.scroll-div::-webkit-scrollbar-thumb{
+    background: var(--primary-color);
+    border-radius: 5px;
+}
+
+th,td{
+    text-align: center;
+}
