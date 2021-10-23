@@ -1,10 +1,8 @@
-import {format, addMonths} from 'date-fns';
 const format = require('date-fns/format');
-const addMonths = require('date-fns/addMonths');
 var select = 0;
 var monto = 0;
 var taza = 0;
-var fechaInicio = new Date(); //fecha
+var today = new Date(); //fecha
 var tab = "";
 var fila = "";
 var pagoInicial= 0;
