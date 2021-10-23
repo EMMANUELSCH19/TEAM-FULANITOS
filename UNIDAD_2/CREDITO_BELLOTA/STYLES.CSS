@@ -37,7 +37,7 @@ h1{
     margin: 20px auto;
 }
 
-.importe, .plazo, .tasa_interes_anual{
+.importe, .plazo, .tasa_interes_anual, .date{
     padding: 10px;
     border-bottom: solid 1px var(--secondary-color);
     display: flex;
@@ -46,6 +46,10 @@ h1{
 .importe input{
     border: solid 1px;
     border-radius: 5px;
+}
+
+.dt button{
+    font-weight: bold;
 }
 
 .scroll-div{
