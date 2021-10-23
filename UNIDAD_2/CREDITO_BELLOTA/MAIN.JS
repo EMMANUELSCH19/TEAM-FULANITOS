@@ -1,4 +1,3 @@
-const format = require('date-fns/format');
 var select = 0;
 var monto = 0;
 var taza = 0;
@@ -12,6 +11,10 @@ var dp = 31;
 var montoMinimos = 0;
 var comision = 0;
 var amortizacio = 0;
+var fecha = dateFns.format(today, 'DD/MM/YYYY');
+var control = dateFns.format(today, 'DD/MM/YYYY');
+var conteoDay = 0;
+var diffDay = 0;
 
 
 //obtiene el plazo del select 
@@ -85,21 +88,28 @@ function calcularPrimerIVA(){
 }
 
 function fechas(mes){
-    var meses = format(addMonths(today, mes), 'dd-MM-yyyy');
-    return meses;
+    fecha = dateFns.addMonths(today, mes);
+    control = dateFns.format(fecha, 'DD/MM/YYYY');
+
+    return dateFns.format(fecha, 'DD/MM/YYYY');
+}
+
+function contarDias(){//funcion para el conteo de dias actual: no funciona
+    //diffDay = dateFns.differenceInDays(new Date(fecha), new Date(control));
+    console.log(dateFns.format(dateFns.endOfMonth(fecha), 'DD'));
+    return dateFns.format(dateFns.endOfMonth(fecha), 'DD');
 }
 
 function agregarTodosDatos(){
-    console.log("0.- disposicion: -"+monto+"\nsaldo insoluto: "+saldoInsoluto+"\ncomision: "+comision+"\n IVA: "+calcularPrimerIVA()+
-    "\nflujo: "+(-monto+(calcularPrimerIVA()+comisiones())));
+    console.log(dateFns.differenceInDays(fecha, control));
     pagoInicialPeriodo();
     $("#tabla>tbody").append("<tr><th scope='row'>"+0+"</th>"+
-        "<td id='fecInicial'>"+(format(today, 'dd/MM/yyyy'))+"</td>"+
+        "<td id='fecInicial'>"+dateFns.format(today, 'DD/MM/YYYY')+"</td>"+
         "<td id='fecFinal'> </td>"+
         "<td id='dias'> </td>"+
         "<td id='disposicion'>-"+monto+"</td>"+
         "<td id='saldoIn'>"+saldoInsoluto+"</td>"+
-        "<td id='comisions'>"+comision+"</td>"+
+        "<td id='comisions'>"+comisiones()+"</td>"+
         "<td id='amorti'> </td>"+
         "<td id='inte'> </td>"+
         "<td id='iva'>"+calcularPrimerIVA()+"</td>"+
@@ -107,9 +117,9 @@ function agregarTodosDatos(){
         saldoInsolutos();
         for (let i = 1; i <= select; i++) {
             $("#tabla>tbody").append("<tr><th scope='row'>"+i+"</th>"+
-            "<td id='fecInicial'>"+"22/10/2021"+"</td>"+
+            "<td id='fecInicial'>"+control+"</td>"+
             "<td id='fecFinal'>"+fechas(i)+"</td>"+
-            "<td id='dias'>"+30+"</td>"+
+            "<td id='dias'>"+contarDias()+"</td>"+
             "<td id='disposicion'> </td>"+
             "<td id='saldoIn'>"+(Math.round(saldoInsoluto*100)/100)+"</td>"+
             "<td id='comisions'> </td>"+
@@ -119,15 +129,6 @@ function agregarTodosDatos(){
             "<td id='flujo'>"+(Math.round((montoMinimo()+calcularIVA())*100)/100)+"</td></tr>");
             saldoInsolutos();
         }
-    console.log("1.- disposicion: -"+monto+"\nsaldo insoluto: "+saldoInsoluto+"\ncomision: "+comision+"\n IVA: "+calcularIVA()+
-    "\nflujo: "+(Math.round((montoMinimo()+calcularIVA())*100)/100));
-    saldoInsolutos();
-    console.log("2.- disposicion: -"+monto+"\nsaldo insoluto: "+saldoInsoluto+"\ncomision: "+comision+"\n IVA: "+calcularIVA()+
-    "\nflujo: "+(Math.round((montoMinimo()+calcularIVA())*100)/100));
-    saldoInsolutos();
-    console.log("3.- disposicion: -"+monto+"\nsaldo insoluto: "+(Math.round(saldoInsoluto*100)/100)+"\ncomision: "+comision+"\n IVA: "+calcularIVA()+
-    "\nflujo: "+(Math.round((montoMinimo()+calcularIVA())*100)/100));
-    saldoInsolutos();
     
 }
 
