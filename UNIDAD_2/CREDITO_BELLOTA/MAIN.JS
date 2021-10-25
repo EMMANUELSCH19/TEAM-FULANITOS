@@ -130,40 +130,7 @@ function agregarTodosDatos(){
             saldoInsolutos();
         }
     
-}
-
-function agregarTodosDatos2(){
-    alert("hola");
-
-    // $("#tabla>tbody").append("<tr><th scope='row'>"+0+"</th>"+
-    //     "<td id='fecInicial'>"+(format(today, 'dd/MM/yyyy'))+"</td>"+
-    //     "<td id='fecFinal'> </td>"+
-    //     "<td id='dias'> </td>"+
-    //     "<td id='disposicion'>-"+monto+"</td>"+
-    //     "<td id='saldoIn'>"+saldoInsoluto+"</td>"+
-    //     "<td id='comisions'>"+comision+"</td>"+
-    //     "<td id='amorti'> </td>"+
-    //     "<td id='inte'> </td>"+
-    //     "<td id='iva'>"+calcularPrimerIVA()+"</td>"+
-    //     "<td id='flujo'>"+(-monto+(calcularPrimerIVA()+comisiones()))+"</td></tr>");
-    //     saldoInsolutos();
-    //     for (let i = 1; i <= select; i++) {
-    //         $("#tabla>tbody").append("<tr><th scope='row'>"+i+"</th>"+
-    //         "<td id='fecInicial'>"+"22/10/2021"+"</td>"+
-    //         "<td id='fecFinal'>"+fechas(i)+"</td>"+
-    //         "<td id='dias'>"+30+"</td>"+
-    //         "<td id='disposicion'> </td>"+
-    //         "<td id='saldoIn'>"+(Math.round(saldoInsoluto*100)/100)+"</td>"+
-    //         "<td id='comisions'> </td>"+
-    //         "<td id='amorti'>"+(Math.round(amortizacio*100)/100)+"</td>"+
-    //         "<td id='inte'>"+(Math.round(InteresesOrdinarios()*100)/100)+"</td>"+
-    //         "<td id='iva'>"+calcularIVA()+"</td>"+
-    //         "<td id='flujo'>"+(Math.round((montoMinimo()+calcularIVA())*100)/100)+"</td></tr>");
-    //         saldoInsolutos();
-    //     }
-}
-
-//
+    }
 
 function contadorDias(){
     var fechainicial = moment(2021-09-10);
