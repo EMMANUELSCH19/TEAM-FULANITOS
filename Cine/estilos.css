@@ -1,0 +1,89 @@
+body{
+    background-color:#080F28;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+nav{
+    background: rgb(0, 0, 0,.5);
+    color: white;
+    display: grid;
+    grid-template-columns: 30% 35% 25% 10%;
+}
+
+.title-page{
+    display: flex;
+    justify-content: center;
+}
+
+.nav-menu{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.nav-menu a{
+    text-decoration: none;
+    color: white;
+}
+
+.search-bar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.input-search{
+    width: 60%;
+    height: 30px;
+    border-radius: 3px 0px 0px 3px;
+    border: 1px solid #ccc;
+    background: #080F28;
+    color: white;
+    padding: 5px;
+}
+
+.btn-search{
+    width: 20%;
+    height: 30px;
+    border-radius: 0px 3px 3px 0px;
+    border: 1px solid #ccc;
+    background: #1f1e24;
+    cursor: pointer;
+}
+
+.btn-search:hover{
+    background: #ae00ff;
+}
+
+.icon-user{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.icon-user a i{
+    color: white;
+    font-size: 20px;
+}
+
+.options-container{
+    display: flex;
+    justify-content: center;
+      
+}
+
+.options{
+    background: #ae00ff;
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    border: 1px solid rgb(255, 255, 255);
+    border-radius: 3px;
+    width: 150px;
+    height: 50px;
+    margin: 10px;
+}
+
+
+/* * [ YA? ESPERANDING.. ] */
+/* ! Ya vine !!!!!
