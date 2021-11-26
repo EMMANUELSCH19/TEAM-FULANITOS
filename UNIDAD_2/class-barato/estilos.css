@@ -1,0 +1,46 @@
+body{
+    font-family: 'Dubai';
+}
+
+.btn{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn .p{
+    background: springgreen;
+    width: 100px;
+    height: auto;
+    margin: 10px;
+    border: solid 1px rgb(65, 65, 65);
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.btn .a{
+    background: rgb(247, 76, 247);
+    width: 100px;
+    height: auto;
+    margin: 10px;
+    border: solid 1px rgb(65, 65, 65);
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+.p:hover{
+    background: rgba(1, 197, 99, 0.705);
+}
+
+.a:hover{
+    background: rgba(238, 130, 238, 0.74);
+}
+
+
+
