@@ -16,7 +16,7 @@
             <a class="navbar-brand" >TAREAS</a>
            
             <div class="collapse navbar-collapse" id="navbarText">
-                <a href="/index.html"><i class="fas fa-arrow-circle-left"></i></a>
+                <a href="../../login.html"><i class="fas fa-arrow-circle-left"></i></a>
             </div>
         </div>
     </nav>

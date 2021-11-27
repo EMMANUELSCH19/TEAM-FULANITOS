@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/estilos-login.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+    <title>Login</title>
+</head>
+<body>
+    <form id="form">
+        <div class="form-inner">
+            <h1>Iniciar Sesion</h1>
+            <select name="ocupacion" id="" required >
+                <option selected>Seleccione...</option>
+                <option value="profesor">Profesor</option>
+                <option value="alumno">Alumno</option>
+            </select>
+            <input name="user" id="nombre" type="text" placeholder="Nombre Usuario" required>
+            <input name="email" type="email" placeholder="Email" id="email" required>
+            <input name="pass" type="password" placeholder="Contraseña" id="pass" required> 
+            <button type="submit">Iniciar Sesion</button>
+        </div>   
+    </form>  
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="js/login.js"></script>
+</body>
+</html>

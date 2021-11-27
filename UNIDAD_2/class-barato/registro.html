@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/estilos-login.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+    <title>Registro</title>
+</head>
+<body>
+    <form id="form">
+        <div class="form-inner">
+            <h1>Registrarse</h1>
+            <input name= "nombre" id="nombres" type="text" placeholder="Nombre(s):" required>
+            <input name= "apellidos" id="apellidos" type="text" placeholder="Apellidos:" required>
+            <select name="ocupacion" id="" >
+                <option selected>Seleccione...</option>
+                <option value="profesor">Profesor</option>
+                <option value="alumno">Alumno</option>
+            </select>
+            <input name= "telefono" id="telefono" type="number" maxlength="10" minlength="10" placeholder="Telefono:" required>
+            <input name= "user" id="nombre" type="text" placeholder="Nombre Usuario:" required>
+            <input name= "correo" type="email" placeholder="Email" id="email:" required>
+            <input name= "pass" type="password" placeholder="Contraseña" id="pass:" required> 
+            <button type="submit">Registrarse</button>
+        </div>   
+    </form>  
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="js/registro.js"></script>
+</body>
+</html>

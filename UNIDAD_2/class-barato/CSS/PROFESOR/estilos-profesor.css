@@ -1,6 +1,6 @@
 body{
     font-family: 'Dubai';
-    background: #f2f2f2;
+    background-color: rgb(12, 7, 49);
 }
 
 main{
@@ -20,7 +20,7 @@ main{
     height: 250px;
     padding: 30px;
     border-radius: 10px;
-    box-shadow: 0px 0px 10px #000;
+    box-shadow: 0px 0px 150px rgb(0, 247, 255);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -48,7 +48,7 @@ main{
 }
 
 .publicaciones:hover{
-    box-shadow: 0px 0px 10px #000;
+    box-shadow: 0px 0px 10px rgb(0, 255, 242);
 }
 
 .publicacion{
@@ -109,4 +109,58 @@ main{
 
 .opciones a:hover{
     color: rgb(255, 0, 0);
+}
+
+@media (max-width: 645px){
+    .container-main{
+        width: 80%;
+        padding: 20px;
+    }
+    .clase{
+        font-size: 40px;
+    }
+
+    .publicaciones{
+        padding: 1px;
+    }
+}
+
+@media (max-width: 560px){
+    .container-main{
+        width: 90%;
+    }
+
+    .clase{
+        height: 200px;
+    }
+}
+
+@media (max-width: 500px){
+    .container-main{
+        width: 100%;
+    }
+
+    .clase{
+        font-size: 30px;
+        height: 150px;
+        text-align: center;
+    }
+
+    .creador{
+        font-size: 14px;
+        text-align: start;
+    }
+
+    .tarea{
+        font-size: 15px;
+        text-align: start;
+    }
+
+    .creador, .tarea{
+        margin: 5px 10px;
+    }
+
+    .date-container{
+        margin: 5px 0 0 0px;
+    }
 }
